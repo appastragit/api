@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const usuarioModel = require('./models/usuarios');
 
-const sequelize = new Sequelize('appastra', 'root', 'root', {
+const sequelize = new Sequelize('appastra', 'appastra', 'appastra', {
     host: process.env.db || 'localhost',
     dialect: 'mysql'
 });
