@@ -2,7 +2,7 @@ const express = require('express');
 const sequelize = require("./mariadbDatabase");
 const app = require('./app');
 
-const port = 3999;
+const port = 8443;
 
 console.clear();
 
