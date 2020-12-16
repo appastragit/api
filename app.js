@@ -9,6 +9,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
 const clases_routes = require('./routes/clases');
+const usuarios_routes = require('./routes/usuarios');
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -19,5 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api', clases_routes);
+app.use('/api', usuarios_routes);
+
 
 module.exports = app;

@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const sequelize = require('../mariadbDatabase');
 
-const Clases = sequelize.define('usuarios', {
+const Usuarios = sequelize.define('usuarios', {
     username: {
         type: Sequelize.STRING,
     },
@@ -18,7 +18,7 @@ const Clases = sequelize.define('usuarios', {
         type: Sequelize.STRING,
     },
     fecha_nacimiento: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
     },
     d_pais: {
         type: Sequelize.STRING,
