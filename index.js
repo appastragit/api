@@ -1,17 +1,24 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const sequelize = require("./mariadbDatabase");
+const app = require('./app');
 
-const router = require('./routes');
+const port = 3999;
 
-const app = express ();
+console.clear();
 
-require ('./db');
-console.log('conectando a la base de datos')
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true }));
-
-app.use('/', router)
-
-app.listen(8080, () => {
-    console.log('Se levanta el servidor en el puerto 3999')
-});
+try {
+    sequelize.authenticate()
+        .then(() => {
+            console.log('Sequelize - OK', 'Sequelize establecio una conexión con la base de datos satisfactoriamente');
+            app.listen(port, () => {
+                console.log("Server - OK", "El servidor se ha iniciado correctamente y esta escuchando en el puerto", port);
+            })
+        })
+        .catch(err => {
+            console.error('Sequelize - ERR', 'Sequelize no pudo establecer una conexión con la base de datos, el error se encuentra detallado a continuación:');
+            console.error('detalles del error:', err)
+    })
+} catch (error) {
+    console.error("Server - ERR", "Ha ocurrido un error inesperado mientras se intentaba levantar el servidor, el error se encuentra detallado a continuación:");
+    console.error('detalles del error:', error);
+}

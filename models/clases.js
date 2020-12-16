@@ -1,13 +1,19 @@
-module.exports = (sequelize, type) => {
-    return sequelize.define('clase', {
-        id: {
-            type: type.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        pass: type.STRING,
-        id_profesor: type.STRING,
-        nombre: type.STRING,
-        color: type.STRING
-    })
-}
+const Sequelize = require("sequelize");
+const sequelize = require('../mariadbDatabase');
+
+const Clases = sequelize.define('clases', {
+    pass: {
+        type: Sequelize.STRING,
+    },
+    id_profesor: {
+        type: Sequelize.STRING,
+    },
+    nombre: {
+        type: Sequelize.STRING,
+    },
+    color: {
+        type: Sequelize.STRING,
+    },
+});
+
+module.exports = Clases;

@@ -1,13 +1,7 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('tarea', {
-        id: {
-            type: type.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+    return sequelize.define('tareas', {
         id_evento: type.STRING,
         id_usuario: type.STRING,
-        fecha_creacion: type.DATE,
         fecha_fin: type.DATE,
         fecha_entrega: type.STRING,
         titulo: type.STRING,

@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
 
-const usuarioModel = require('./models/usuarios');
-const archivoModel = require('./models/archivos');
-const asistenteModel = require('./models/asistentes');
-const claseModel = require('./models/clases');
-const eventoModel = require('./models/eventos');
-const tareaModel = require('./models/tareas');
-const temarioModel = require('./models/temarios');
-const unidadModel = require('./models/unidades');
+const usuarioModel = require('./models/sync/usuarios');
+const archivoModel = require('./models/sync/archivos');
+const asistenteModel = require('./models/sync/asistentes');
+const claseModel = require('./models/sync/clases');
+const eventoModel = require('./models/sync/eventos');
+const tareaModel = require('./models/sync/tareas');
+const temarioModel = require('./models/sync/temarios');
+const unidadModel = require('./models/sync/unidades');
 
 const sequelize = new Sequelize('appastra', 'appastra', 'appastra', {
     host: process.env.db || 'localhost',
@@ -23,9 +23,7 @@ const tarea = tareaModel(sequelize, Sequelize);
 const temario = temarioModel(sequelize, Sequelize);
 const unidad = unidadModel(sequelize, Sequelize);
 
-
-
-sequelize.sync({force: true})
+sequelize.sync({force: false})
     .then(() =>{
         console.log('Se han sincronizado las tablas correctamente')
     });

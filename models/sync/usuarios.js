@@ -1,10 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('usuario', {
-        id: {
-            type: type.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+    return sequelize.define('usuarios', {
         username: type.STRING,
         pass: type.STRING,
         nombre: type.STRING,
