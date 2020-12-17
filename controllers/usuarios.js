@@ -37,7 +37,7 @@ var controller = {
                         })
                         .catch(err => {
                             return res.status(200).send({
-                                status: err[1],
+                                err,
                                 msg: "Ocurrio un error mientras se insertaban los datos"
                             });
                         })
