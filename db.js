@@ -23,7 +23,7 @@ const tarea = tareaModel(sequelize, Sequelize);
 const temario = temarioModel(sequelize, Sequelize);
 const unidad = unidadModel(sequelize, Sequelize);
 
-sequelize.sync({force: false})
+sequelize.sync({force: true})
     .then(() =>{
         console.log('Se han sincronizado las tablas correctamente')
     });
