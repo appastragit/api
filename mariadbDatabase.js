@@ -6,4 +6,4 @@ module.exports = new Sequelize('appastra', 'appastra', 'appastra', {
 });
 
 // descomentar para generar las tablas de la BBDD
-require ('./db');
+// require ('./db');
