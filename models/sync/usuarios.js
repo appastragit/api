@@ -5,7 +5,7 @@ module.exports = (sequelize, type) => {
         nombre: type.STRING,
         apellidos: type.STRING,
         email: type.STRING,
-        fecha_nacimiento : type.DATE,
+        fecha_nacimiento : type.STRING,
         d_pais: type.STRING,
         d_provincia: type.STRING,
         d_localidad: type.STRING,
