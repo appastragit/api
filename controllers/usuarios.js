@@ -28,7 +28,7 @@ var controller = {
                     if (JSON.stringify(usuario) == '[]'){
                         console.log(body)
                         const obj = JSON.parse(JSON.stringify(body));
-                        Usuarios.create(body)
+                        Usuarios.create(obj)
                         .then(usuario => {
                             return res.status(200).send({
                                 status: "OK",
